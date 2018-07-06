@@ -5,6 +5,9 @@ $(document).ready(function(){
 	$("#play_out").on("click",function(){
 		loop_out();
 	});
+	$("#play_fade").on("click",function(){
+		loop_fade();
+	});
 	$(".left-feature li").on("click", function(){
 		console.log($(this).data("target"), $(".content").scrollTop(), $($(this).data("target")).offset().top);
 		console.log();
@@ -25,4 +28,10 @@ function loop_out() {
 	$('#animate_out .node').animate ({
 		left: '+=95%',
 	}, 1000, 'easeInQuad');
+}
+function loop_fade() {
+	$('#animate_fade .node').css('opacity','1');
+	$('#animate_fade .node').animate ({
+		opacity: '0',
+	}, 500, 'linear');
 }
